@@ -1,6 +1,7 @@
 package main
 
 import "core:fmt"
+import "core:intrinsics"
 
 main :: proc() {
     fmt.println("hello")
