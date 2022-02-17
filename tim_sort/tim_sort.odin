@@ -75,24 +75,14 @@ tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
     min_run := get_min_run(n)
 
     for i := 0; i < n; i += min_run {
-        run_len := 0
-        if (i + min_run - 1) < (n - 1) {
-            run_len = i + min_run - 1
-        } else {
-            run_len = n - 1
-        }
+        run_len := min(i + min_run - 1, n - 1)
         insertion_sort(array, i, run_len, f)
     }
 
     for size := min_run; size < n; size = 2 * size {
         for left := 0; left < n; left += 2 * size {
             mid := left + size - 1
-            right := 0
-            if (left + 2 * size - 1) < (n - 1) {
-                right = left + 2 * size - 1
-            } else {
-                right = n - 1
-            }
+            right := min(left + 2 * size - 1, n - 1)
             if mid < right {
                 merge(array, left, mid, right, f)
             }
