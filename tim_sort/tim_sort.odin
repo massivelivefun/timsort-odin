@@ -13,22 +13,26 @@ get_min_run :: proc(n: int) -> int {
     return n2 + r
 }
 
-@(private="file")
-asc :: proc(a: T, b: T) -> int {
-    if a <= b {
-        return 0
-    } else {
-        return 1
+asc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
+    asc_inner :: proc(a: T, b: T) -> int {
+        if a <= b {
+            return 0
+        } else {
+            return 1
+        }
     }
+    return asc_inner
 }
 
-@(private="file")
-desc :: proc(a: T, b: T) -> int {
-    if a > b {
-        return 0
-    } else {
-        return 1
+desc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
+    desc_inner :: proc(a: T, b: T) -> int {
+        if a > b {
+            return 0
+        } else {
+            return 1
+        }
     }
+    return desc_inner
 }
 
 tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
@@ -97,5 +101,5 @@ tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
 }
 
 tim_sort :: proc(array: $A/[]$T) where intrinsics.type_is_ordered(T) {
-    tim_sort_proc(array, asc)
+    tim_sort_proc(array, asc(T))
 }
