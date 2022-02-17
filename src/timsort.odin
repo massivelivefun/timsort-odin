@@ -62,7 +62,7 @@ timsort :: proc(array: $A/[]$T) where intrinsics.type_is_ordered(T) {
         }
     }
     insertion_sort :: proc(a: A, start, end: int) {
-        for i in start+1..<end {
+        for i in start+1..end {
             for j := i; j > start && a[j] < a[j-1]; j -= 1 {
                 a[j], a[j-1] = a[j-1], a[j]
             }
