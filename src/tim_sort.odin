@@ -26,13 +26,6 @@ get_min_run :: proc(n: int) -> int {
     return n2 + r
 }
 
-print_array :: proc(array: $A/[]$T) {
-    for i := 0; i < len(array); i += 1 {
-        fmt.printf("%d  ", array[i])
-    }
-    fmt.println()
-}
-
 tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
     merge :: proc(a: A, start, mid, end: int, f: proc(T, T) -> int) {
         s, m := start, end
