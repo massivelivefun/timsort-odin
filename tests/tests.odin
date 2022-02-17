@@ -1,3 +1,5 @@
+import "tim_sort:tim_sort"
+
 print_array :: proc(array: []$T) {
     for i := 0; i < len(array); i += 1 {
         fmt.printf("%d  ", array[i])
@@ -10,6 +12,6 @@ main :: proc() {
     slice := array[:]
 
     print_array(slice)
-    tim_sort(slice)
+    tim_sort.tim_sort(slice)
     print_array(slice)
 }
