@@ -24,15 +24,15 @@ asc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
     return asc_inner
 }
 
-desc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
-    desc_inner :: proc(a: T, b: T) -> int {
+dec :: proc($T: typeid) -> proc(a: T, b: T) -> int {
+    dec_inner :: proc(a: T, b: T) -> int {
         if a > b {
             return 0
         } else {
             return 1
         }
     }
-    return desc_inner
+    return dec_inner
 }
 
 tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
