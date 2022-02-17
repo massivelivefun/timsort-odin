@@ -2,9 +2,6 @@ package main
 
 import "core:intrinsics"
 
-Interface :: sort.Interface
-slice_interface :: sort.slice_interface
-
 main :: proc() {
     array := [15]int{-2, 7, 15, -14, 0, 15, 0, 7, -7, -4, -13, 5, 8, -14, 12}
     slice := array[:]
