@@ -2,6 +2,7 @@ package tim_sort
 
 import "core:intrinsics"
 
+@(private="file")
 get_min_run :: proc(n: int) -> int {
     r := 0
     n2 := n
