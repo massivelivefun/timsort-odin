@@ -1,2 +1,2 @@
 mkdir build
-..\Odin\odin.exe build src\timsort.odin -out:build/timsort.exe
+..\Odin\odin.exe build src\tim_sort.odin -out:build/tim_sort.exe
