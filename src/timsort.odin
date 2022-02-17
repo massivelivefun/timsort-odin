@@ -98,7 +98,7 @@ tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
     }
 }
 
-timsort :: proc(array: $A/[]$T) where intrinsics.type_is_ordered(T) {
+tim_sort :: proc(array: $A/[]$T) where intrinsics.type_is_ordered(T) {
     merge :: proc(a: A, start, mid, end: int) {
         s, m := start, end
 
