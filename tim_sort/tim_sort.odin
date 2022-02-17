@@ -1,4 +1,4 @@
-package main
+package tim_sort
 
 import "core:intrinsics"
 
