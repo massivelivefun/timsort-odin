@@ -1,8 +1,6 @@
 package main
 
-import "core:fmt"
 import "core:intrinsics"
-import "core:sort"
 
 Interface :: sort.Interface
 slice_interface :: sort.slice_interface
