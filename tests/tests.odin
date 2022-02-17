@@ -1,6 +1,7 @@
 package main
 
-import "tim_sort:tim_sort"
+import "core:fmt"
+import "tim_sort"
 
 print_array :: proc(array: []$T) {
     for i := 0; i < len(array); i += 1 {
