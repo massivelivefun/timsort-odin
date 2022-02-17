@@ -19,6 +19,7 @@ get_min_run :: proc(n: int) -> int {
     return n2 + r
 }
 
+@(private)
 insertion_sort :: proc(it: Interface, a, b: int) {
     for i in a+1..<b {
         for j := i; j > a && it->less(j, j-1); j -= 1 {
