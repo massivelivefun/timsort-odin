@@ -34,10 +34,10 @@ merge :: proc(it: Interface, l, m, r: int) {
     len2 := r - m
     left := make([]int, len1)
     right := make([]int, len2)
-    for i := 0; i < len1; i++ {
+    for i := 0; i < len1; i += 1 {
         left[i] = it->collection[l + i]
     }
-    for i := 0; i < len2; i++ {
+    for i := 0; i < len2; i += 1 {
         right[i] = it->collection[m + 1 + i]
     }
 
@@ -48,24 +48,24 @@ merge :: proc(it: Interface, l, m, r: int) {
     for i < len1 && j < len2 {
         if left[i] <= right[j] {
             it->collection[k] = left[i]
-            i++
+            i += 1
         } else {
             it->collection[k] = right[i]
-            j++
+            j += 1
         }
-        k++
+        k += 1
     }
 
     for i < len1 {
         it->collection[k] = left[i]
-        k++
-        j++
+        k += 1
+        j += 1
     }
 
     for j < len2 {
         it->collection[k] = right[j]
-        k++
-        j++
+        k += 1
+        j += 1
     }
 }
 
@@ -73,7 +73,7 @@ timsort :: proc(it: Interface) {
     it_len = it->len()
     min_run := get_min_run(it_len)
 
-    for i := 0; i < it_len; i++ {
+    for i := 0; i < it_len; i += 1 {
         run_len := 0
         if i + min - 1 < it_len {
             run_len = i + min - 1
