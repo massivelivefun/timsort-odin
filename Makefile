@@ -1,2 +1,7 @@
 mkdir build
-..\Odin\odin.exe build tests\tests.odin -out:build/tests.exe
+
+# Windows
+../Odin/odin.exe build tim_sort_test.odin -out:build/tests.exe
+
+# MacOS
+../Odin/odin build tim_sort_test.odin -out:build/tests
