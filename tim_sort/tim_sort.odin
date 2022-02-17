@@ -13,6 +13,24 @@ get_min_run :: proc(n: int) -> int {
     return n2 + r
 }
 
+@(private="file")
+asc :: proc(a: T, b: T) -> int {
+    if a <= b {
+        return 0
+    } else {
+        return 1
+    }
+}
+
+@(private="file")
+desc :: proc(a: T, b: T) -> int {
+    if a > b {
+        return 0
+    } else {
+        return 1
+    }
+}
+
 tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
     merge :: proc(a: A, start, mid, end: int, f: proc(T, T) -> int) {
         s, m := start, end
