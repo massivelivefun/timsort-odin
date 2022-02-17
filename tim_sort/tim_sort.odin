@@ -14,25 +14,23 @@ get_min_run :: proc(n: int) -> int {
 }
 
 asc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
-    asc_inner :: proc(a: T, b: T) -> int {
+    return proc(a: T, b: T) -> int {
         if a <= b {
             return 0
         } else {
             return 1
         }
     }
-    return asc_inner
 }
 
 dec :: proc($T: typeid) -> proc(a: T, b: T) -> int {
-    dec_inner :: proc(a: T, b: T) -> int {
+    return proc(a: T, b: T) -> int {
         if a > b {
             return 0
         } else {
             return 1
         }
     }
-    return dec_inner
 }
 
 tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
