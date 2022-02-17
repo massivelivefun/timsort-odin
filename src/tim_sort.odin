@@ -12,7 +12,7 @@ main :: proc() {
     slice := array[:]
 
     print_array(slice)
-    timsort(slice)
+    tim_sort(slice)
     print_array(slice)
 }
 
