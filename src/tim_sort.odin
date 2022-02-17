@@ -2,15 +2,6 @@ package main
 
 import "core:intrinsics"
 
-main :: proc() {
-    array := [15]int{-2, 7, 15, -14, 0, 15, 0, 7, -7, -4, -13, 5, 8, -14, 12}
-    slice := array[:]
-
-    print_array(slice)
-    tim_sort(slice)
-    print_array(slice)
-}
-
 get_min_run :: proc(n: int) -> int {
     r := 0
     n2 := n
