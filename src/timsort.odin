@@ -27,3 +27,44 @@ insertion_sort :: proc(it: Interface, a, b: int) {
         }
     }
 }
+
+@(private)
+merge :: proc(it: Interface, l, m, r: int) {
+    len1 := m - l + 1
+    len2 := r - m
+    left := make([]int, len1)
+    right := make([]int, len2)
+    for i := 0; i < len1; i++ {
+        left[i] = it->collection[l + i]
+    }
+    for i := 0; i < len2; i++ {
+        right[i] = it->collection[m + 1 + i]
+    }
+
+    i := 0
+    j := 0
+    k := l
+
+    for i < len1 && j < len2 {
+        if left[i] <= right[j] {
+            it->collection[k] = left[i]
+            i++
+        } else {
+            it->collection[k] = right[i]
+            j++
+        }
+        k++
+    }
+
+    for i < len1 {
+        it->collection[k] = left[i]
+        k++
+        j++
+    }
+
+    for j < len2 {
+        it->collection[k] = right[j]
+        k++
+        j++
+    }
+}
