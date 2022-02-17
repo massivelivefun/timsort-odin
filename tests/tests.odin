@@ -1,3 +1,5 @@
+package main
+
 import "tim_sort:tim_sort"
 
 print_array :: proc(array: []$T) {
