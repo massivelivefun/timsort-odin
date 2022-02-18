@@ -1,4 +1,4 @@
-package tim_sort
+package timsort
 
 import "core:intrinsics"
 
@@ -33,7 +33,7 @@ desc :: proc($T: typeid) -> proc(a, b: T) -> int {
     }
 }
 
-tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
+timsort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
     merge :: proc(a: A, start, mid, end: int, f: proc(T, T) -> int) {
         s, m := start, end
 
@@ -88,6 +88,6 @@ tim_sort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
     }
 }
 
-tim_sort :: proc(array: $A/[]$T) where intrinsics.type_is_ordered(T) {
-    tim_sort_proc(array, asc(T))
+timsort :: proc(array: $A/[]$T) where intrinsics.type_is_ordered(T) {
+    timsort_proc(array, asc(T))
 }
