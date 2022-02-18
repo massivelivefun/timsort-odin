@@ -1,6 +1,6 @@
 # timsort-odin
 
-A simple timsort implemented for use in Odin source code.
+A useful generic timsort algorithm implemented in Odin.
 
 ## What is Timsort?
 
