@@ -13,8 +13,8 @@ get_min_run :: proc(n: int) -> int {
     return n2 + r
 }
 
-asc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
-    return proc(a: T, b: T) -> int {
+asc :: proc($T: typeid) -> proc(a, b: T) -> int {
+    return proc(a, b: T) -> int {
         if a <= b {
             return 0
         } else {
@@ -23,8 +23,8 @@ asc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
     }
 }
 
-desc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
-    return proc(a: T, b: T) -> int {
+desc :: proc($T: typeid) -> proc(a, b: T) -> int {
+    return proc(a, b: T) -> int {
         if a > b {
             return 0
         } else {
