@@ -23,7 +23,7 @@ asc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
     }
 }
 
-dec :: proc($T: typeid) -> proc(a: T, b: T) -> int {
+desc :: proc($T: typeid) -> proc(a: T, b: T) -> int {
     return proc(a: T, b: T) -> int {
         if a > b {
             return 0
