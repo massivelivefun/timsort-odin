@@ -11,6 +11,8 @@ print_slice :: proc(slice: []int) {
     fmt.println()
 }
 
+// Currently the Odin compiler's test command is broken (Feb 21 2022). Check in
+// later when the test command works and check if this test is valid.
 @(test)
 test_simple_and_small_sort_check :: proc(t: ^testing.T) {
     array := [15]int{-2, 7, 15, -14, 0, 15, 0, 7, -7, -4, -13, 5, 8, -14, 12}
