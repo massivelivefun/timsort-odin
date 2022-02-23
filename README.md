@@ -8,6 +8,5 @@ Timsort is [this](https://en.wikipedia.org/wiki/Timsort)!
 
 ## To-do
 
-* Fix tests.odin file position
-* Fix library collection pathing
-* Introduce more test cases
+* Cleanup timsort package structure
+* Introduce more test cases when Odin compiler supports native unit tests
