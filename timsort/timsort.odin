@@ -13,37 +13,29 @@ get_min_run :: proc(n: int) -> int {
     return n2 + r
 }
 
-asc :: proc($T: typeid) -> proc(a, b: T) -> int {
-    return proc(a, b: T) -> int {
-        if a <= b {
-            return 0
-        } else {
-            return 1
-        }
+asc :: proc($T: typeid) -> proc(a, b: T) -> bool {
+    return proc(a, b: T) -> bool {
+        return a < b
     }
 }
 
-desc :: proc($T: typeid) -> proc(a, b: T) -> int {
-    return proc(a, b: T) -> int {
-        if a > b {
-            return 0
-        } else {
-            return 1
-        }
+desc :: proc($T: typeid) -> proc(a, b: T) -> bool {
+    return proc(a, b: T) -> bool {
+        return a > b
     }
 }
 
-timsort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
-    merge :: proc(a: A, start, mid, end: int, f: proc(T, T) -> int) {
+timsort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> bool) {
+    merge :: proc(a: A, start, mid, end: int, f: proc(T, T) -> bool) {
         s, m := start, end
 
         s2 := m + 1
-        if f(a[m], a[s2]) <= 0 {
+        if f(a[m], a[s2]) {
             return
         }
 
         for s <= m && s2 <= end {
-            if f(a[s], a[s2]) <= 0 {
+            if f(a[s], a[s2]) {
                 s += 1
             } else {
                 v := a[s2]
@@ -61,9 +53,9 @@ timsort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> int) {
             }
         }
     }
-    insertion_sort :: proc(a: A, start, end: int, f: proc(T, T) -> int) {
+    insertion_sort :: proc(a: A, start, end: int, f: proc(T, T) -> bool) {
         for i in start+1..end {
-            for j := i; j > start && f(a[j], a[j-1]) <= 0; j -= 1 {
+            for j := i; j > start && f(a[j], a[j-1]); j -= 1 {
                 a[j], a[j-1] = a[j-1], a[j]
             }
         }
