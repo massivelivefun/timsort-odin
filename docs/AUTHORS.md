@@ -1,5 +1,5 @@
 # Authors
 
-See the github [timsort-odin][contributors] list.
+See the github [timsort-odin list][contributors].
 
-[contributors]: https://github.com/massivelivefun/qpc-hsm-example/graphs/contributors
+[contributors]: https://github.com/massivelivefun/timsort-odin/graphs/contributors
