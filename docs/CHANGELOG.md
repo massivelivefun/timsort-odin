@@ -11,5 +11,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Bootstrap the initial release of timsort-odin
 
-[Unreleased]: https://github.com/massivelivefun/timsort-odin/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/massivelivefun/timsort-odin/releases/tag/v0.0.1
+[Unreleased]: https://github.com/massivelivefun/timsort-odin/compare/0.0.1...HEAD
+[0.0.1]: https://github.com/massivelivefun/timsort-odin/releases/tag/0.0.1
