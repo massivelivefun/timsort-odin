@@ -6,10 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.1] - 2022-03-28
+## [0.1.0] - 2022-03-28
 
 ### Added
 - Bootstrap the initial release of timsort-odin
 
-[Unreleased]: https://github.com/massivelivefun/timsort-odin/compare/0.0.1...HEAD
-[0.0.1]: https://github.com/massivelivefun/timsort-odin/releases/tag/0.0.1
+[Unreleased]: https://github.com/massivelivefun/timsort-odin/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/massivelivefun/timsort-odin/releases/tag/0.1.0
