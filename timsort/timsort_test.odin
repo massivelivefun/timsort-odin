@@ -19,8 +19,7 @@ simple_and_small_sort_check :: proc(t: ^testing.T) {
     slice := array[:]
 
     timsort(slice)
-    if !sort.is_sorted(sort.slice_interface(&slice)) {
-        t.error("This array is NOT sorted correctly.")
+    if !testing.expect(t, sort.is_sorted(sort.slice_interface(&slice)), "This array is NOT sorted correctly.") {
         print_slice(slice)
     }
 }
@@ -31,8 +30,7 @@ simple_with_custom_proc_call :: proc(t: ^testing.T) {
     slice := array[:]
 
     timsort_proc(slice, asc(int))
-    if !sort.is_sorted(sort.slice_interface(&slice)) {
-        t.error("This array is NOT sorted correctly.")
+    if !testing.expect(t, sort.is_sorted(sort.slice_interface(&slice)), "This array is NOT sorted correctly.") {
         print_slice(slice)
     }
 }

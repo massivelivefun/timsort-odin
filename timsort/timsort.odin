@@ -1,6 +1,6 @@
 package timsort
 
-import "core:intrinsics"
+import "base:intrinsics"
 
 @(private="file")
 get_min_run :: proc(n: int) -> int {
@@ -54,7 +54,7 @@ timsort_proc :: proc(array: $A/[]$T, f: proc(T, T) -> bool) {
         }
     }
     insertion_sort :: proc(a: A, start, end: int, f: proc(T, T) -> bool) {
-        for i in start+1..end {
+        for i in start+1..=end {
             for j := i; j > start && f(a[j], a[j-1]); j -= 1 {
                 a[j], a[j-1] = a[j-1], a[j]
             }
